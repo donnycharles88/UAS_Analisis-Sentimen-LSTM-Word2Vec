@@ -188,14 +188,6 @@ This project is created for educational purposes (UAS - Machine Learning).
 
 ---
 
-## 👨‍💻 Author
-
-**Donny Charles**
-- GitHub: [@donnycharles88](https://github.com/donnycharles88)
-- Repository: [UAS_Analisis-Sentimen-LSTM-Word2Vec](https://github.com/donnycharles88/UAS_Analisis-Sentimen-LSTM-Word2Vec)
-
----
-
 ## 🙏 Acknowledgments
 
 - Dataset: Roblox game reviews
