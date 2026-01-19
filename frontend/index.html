@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analisis Sentimen Ulasan Roblox - Positive atau Negative">
+    <title>Roblox Sentiment Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-gradient"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo-icon">🎮</div>
+                <div class="logo-text">
+                    <h1>Roblox Sentiment Analyzer</h1>
+                    <p>Analisis sentimen ulasan Roblox secara real-time</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section glass-card">
+                <h2>Masukkan Ulasan</h2>
+                <p class="section-description">Ketik atau paste ulasan Roblox di bawah untuk menganalisis sentimennya
+                </p>
+
+                <form id="sentimentForm">
+                    <div class="input-group">
+                        <textarea id="reviewText"
+                            placeholder="Contoh: This game is amazing! The graphics are stunning and the gameplay is so fun..."
+                            rows="6" required></textarea>
+                        <div class="char-counter" id="charCounter">0 karakter</div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="analyzeBtn">
+                        <span class="btn-text">Analisis Sentimen</span>
+                        <span class="btn-icon">✨</span>
+                    </button>
+                </form>
+
+                <!-- Example Reviews -->
+                <div class="examples">
+                    <p class="examples-title">Coba contoh ulasan:</p>
+                    <div class="example-chips">
+                        <button class="chip chip-positive"
+                            data-text="This game is absolutely amazing! I love the graphics, the gameplay is so fun and addictive. Best game ever!">
+                            😊 Ulasan Positif
+                        </button>
+                        <button class="chip chip-negative"
+                            data-text="Terrible game, full of bugs and glitches. The servers are always down and it's not fun at all. Very disappointing.">
+                            😞 Ulasan Negatif
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section glass-card" id="resultsSection" style="display: none;">
+                <h2>Hasil Analisis</h2>
+
+                <div class="result-content" id="resultContent">
+                    <!-- Loading State -->
+                    <div class="loading" id="loadingState">
+                        <div class="loading-spinner"></div>
+                        <p>Menganalisis sentimen...</p>
+                    </div>
+
+                    <!-- Result Display -->
+                    <div class="result-display" id="resultDisplay" style="display: none;">
+                        <div class="sentiment-badge" id="sentimentBadge">
+                            <div class="sentiment-icon" id="sentimentIcon"></div>
+                            <div class="sentiment-text">
+                                <div class="sentiment-label" id="sentimentLabel"></div>
+                                <div class="sentiment-sublabel">Sentiment Detected</div>
+                            </div>
+                        </div>
+
+                        <div class="confidence-section">
+                            <div class="confidence-header">
+                                <span>Confidence Score</span>
+                                <span class="confidence-value" id="confidenceValue"></span>
+                            </div>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="confidenceFill"></div>
+                            </div>
+                        </div>
+
+                        <div class="analyzed-text">
+                            <h3>Teks yang Dianalisis:</h3>
+                            <p id="analyzedTextContent"></p>
+                        </div>
+
+                        <button class="btn-secondary" id="analyzeAgainBtn">
+                            Analisis Lagi
+                        </button>
+                    </div>
+
+                    <!-- Error Display -->
+                    <div class="error-display" id="errorDisplay" style="display: none;">
+                        <div class="error-icon">⚠️</div>
+                        <h3>Terjadi Kesalahan</h3>
+                        <p id="errorMessage"></p>
+                        <button class="btn-secondary" id="retryBtn">
+                            Coba Lagi
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Info Section -->
+            <section class="info-section glass-card">
+                <h3>Tentang Analyzer Ini</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">🤖</div>
+                        <h4>Machine Learning</h4>
+                        <p>Menggunakan model LSTM dengan Word2Vec untuk analisis sentimen yang akurat</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">⚡</div>
+                        <h4>Real-time</h4>
+                        <p>Hasil analisis dalam hitungan detik dengan API yang responsif</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🎯</div>
+                        <h4>Akurat</h4>
+                        <p>Dilatih dengan ribuan ulasan Roblox untuk prediksi yang presisi</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Roblox Sentiment Analyzer v1.0.0 | Powered by FastAPI & TensorFlow</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
